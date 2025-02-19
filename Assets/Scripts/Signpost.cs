@@ -21,11 +21,11 @@ public class Signpost : MonoBehaviour
                 break;
 
             case "VillagerSign":
-                signText = "이곳은 조용한 마을 주민들의 안식처입니다.";
+                signText = "이곳은 조용한 마을 주민의 안식처입니다.";
                 break;
 
             case "WellSign":
-                signText = "이 우물의 물로 튀기면 감자튀김이 더 바삭해진다고 한다.";
+                signText = "이 우물의 기름으로 튀기면 감자튀김이 더 바삭해진다고 한다.";
                 break;
 
             case "ShopSign":
@@ -41,11 +41,7 @@ public class Signpost : MonoBehaviour
                 break;
 
             case "CastleSign":
-                signText = "이곳을 지나려면 시험을 통과해야 한다. 준비됐는가?";
-                break;
-
-            default:
-                signText = "이 표지판에는 아무것도 적혀 있지 않다.";
+                signText = "케찹 공주님이 머무는 성";
                 break;
         }
     }
@@ -68,7 +64,7 @@ public class Signpost : MonoBehaviour
         signUI.SetActive(true);
         signUIText.text = signText;
 
-        Invoke(nameof(HideSign), 5f); // 3초 후 자동 닫기
+        Invoke(nameof(HideSign), 3f); // 3초 후 자동 닫기
     }
 
     void HideSign()
