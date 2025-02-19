@@ -55,7 +55,7 @@ public class GatekeeperInteraction : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueUI.SetActive(false);
+        if (dialogueUI != null) dialogueUI.SetActive(false);
         isTalking = false;
 
         // 대화를 끝냈으면 `isDialogueFinished = true`
@@ -64,8 +64,8 @@ public class GatekeeperInteraction : MonoBehaviour
             isDialogueFinished = true;
         }
 
-        // 대화를 끝냈고, Gatekeeper라면 선택지 UI 표시
-        if (gameObject.name == "Gatekeeper" && isDialogueFinished)
+        // `choiceUI`가 존재할 때만 활성화
+        if (gameObject.name == "Gatekeeper" && isDialogueFinished && choiceUI != null)
         {
             choiceUI.SetActive(true);
         }
@@ -93,7 +93,7 @@ public class GatekeeperInteraction : MonoBehaviour
             isPlayerNearby = false;
 
             // 플레이어가 이동만 한 경우 `choiceUI`가 뜨지 않도록 수정
-            if (!isTalking)
+            if (!isTalking && choiceUI != null)
             {
                 EndDialogue();
             }

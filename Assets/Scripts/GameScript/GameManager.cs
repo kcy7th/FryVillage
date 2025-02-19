@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
     public GameObject player; // 플레이어 오브젝트
     public TextMeshProUGUI currentScoreText; // 현재 점수 UI
     public TextMeshProUGUI highScoreText; // 최고 점수 UI
+    public GameObject successText;
+    public GameObject failureText;
 
     private int currentScore = 0;
     private int highScore = 0;
+    private const int successScore = 20;
+
     UIManager uiManager;
 
     public static GameManager Instance
@@ -45,7 +49,6 @@ public class GameManager : MonoBehaviour
     void ShowGameIntro()
     {
         gameIntroPanel.SetActive(true); // 게임 시작 패널 활성화
-        gameOverPanel.SetActive(false); // 게임 오버 패널 비활성화
         player.SetActive(false); // 게임 시작 전 플레이어 비활성화
     }
 
@@ -71,6 +74,15 @@ public class GameManager : MonoBehaviour
         // 점수 UI 업데이트
         currentScoreText.text = "현재 점수: " + currentScore;
         highScoreText.text = "최고 점수: " + highScore;
+
+        if (currentScore >= successScore)
+        {
+            successText.SetActive(true);
+        }
+        else
+        {
+            failureText.SetActive(true);
+        }
 
         uiManager.SetRestart();
     }
