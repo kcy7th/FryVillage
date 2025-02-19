@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             highScore = currentScore;
             PlayerPrefs.SetInt("HighScore", highScore);
+            PlayerPrefs.Save();
         }
 
         // 점수 UI 업데이트
@@ -101,5 +102,4 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateScore(currentScore);
         Debug.Log("Score: " + currentScore);
     }
-
 }

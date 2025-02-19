@@ -69,11 +69,10 @@ public class GatekeeperInteraction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (gameObject != null)
         {
             isPlayerNearby = false;
-            dialogueUI.SetActive(false);
-            choiceUI.SetActive(false);
+            EndDialogue();
         }
     }
 
