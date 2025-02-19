@@ -83,15 +83,6 @@ public class NPCInteraction : MonoBehaviour
                     "여길 지나가려면 내 도전을 받아들여야 한다!"
                 };
                 break;
-
-            default:
-                dialogueLines = new List<string>
-                {
-                    "안녕하세요, 여행자!",
-                    "이곳은 감자튀김 마을입니다.",
-                    "즐거운 시간 보내세요!"
-                };
-                break;
         }
     }
 
