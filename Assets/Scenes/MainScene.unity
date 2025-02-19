@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Name
-      value: StaticNPC (3)
+      value: Villager
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Layer
@@ -223,6 +223,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1185467170}
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1185467174}
   m_SourcePrefab: {fileID: 100100000, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
 --- !u!1001 &201897064
 PrefabInstance:
@@ -290,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (4)
+      value: LabSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -2706,7 +2709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Name
-      value: StaticNPC
+      value: Scientist
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Layer
@@ -2720,7 +2723,163 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1119392928}
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119392932}
   m_SourcePrefab: {fileID: 100100000, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+--- !u!1 &310471668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310471669}
+  - component: {fileID: 310471671}
+  - component: {fileID: 310471670}
+  m_Layer: 5
+  m_Name: InfoText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &310471669
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310471668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 806672550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &310471670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310471668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\uD45C\uC9C0\uD310, NPC\uC640 \uC0C1\uD638\uC791\uC6A9\n: Press 'E'"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
+  m_sharedMaterial: {fileID: -7275808209748535963, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &310471671
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310471668}
+  m_CullTransparentMesh: 1
+--- !u!1 &313630548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
+  m_PrefabInstance: {fileID: 330870619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313630555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313630548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 643936511}
+  dialogueText: {fileID: 1837063967}
 --- !u!1 &329342342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
@@ -2738,10 +2897,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cd06f5eb875b047932eff8db533ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - '"..."'
-  - '"Why do you stare? Have you never seen a potato with eyes before?"'
-  - '"I was once like you... then I embraced the fry."'
+  dialogueLines: []
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+--- !u!114 &329342347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329342342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueUI: {fileID: 643936511}
   dialogueText: {fileID: 1837063967}
 --- !u!1001 &330870619
@@ -2862,7 +3032,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 5cef83bc2ecb2b04ba23e9011c67e2d7, type: 2}
     - target: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
       propertyPath: m_Name
-      value: MovingNPC (1)
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
       propertyPath: m_Layer
@@ -2872,7 +3042,10 @@ PrefabInstance:
     - {fileID: 525917339853012736, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 313630555}
   m_SourcePrefab: {fileID: 100100000, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
 --- !u!1001 &345049638
 PrefabInstance:
@@ -2940,7 +3113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (6)
+      value: VillagerSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -3021,7 +3194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (5)
+      value: ShopSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -3294,15 +3467,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ebbb28c1ff00269469202982ef1abf4c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5881,7 +6054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The farmer''s house"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1001 &800591234
@@ -5950,7 +6122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (3)
+      value: FarmerSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -5965,6 +6137,82 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 732496054}
   m_SourcePrefab: {fileID: 100100000, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
+--- !u!1 &806672549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806672550}
+  - component: {fileID: 806672552}
+  - component: {fileID: 806672551}
+  m_Layer: 5
+  m_Name: InfoPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &806672550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806672549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 310471669}
+  m_Father: {fileID: 1653337706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -164.47318, y: 92}
+  m_SizeDelta: {x: -328.9464, y: -182.4413}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &806672551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806672549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 763bf49229f4333419b1db2862688ebd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &806672552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806672549}
+  m_CullTransparentMesh: 1
 --- !u!1 &818927624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
@@ -5982,7 +6230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The villager''s house"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1 &829475323 stripped
@@ -6002,7 +6249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The research lab"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1001 &831265154
@@ -6071,7 +6317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (1)
+      value: CastleSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -6336,7 +6582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost (2)
+      value: PotatoBeingSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -6402,15 +6648,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: dd138f51c5aa33942a1e0ace3f93efc4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6444,10 +6690,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cd06f5eb875b047932eff8db533ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - '"Did you know? The perfect fry has a 60:40 crisp-to-soft ratio."'
-  - '"I''m experimenting with a new way to fry potatoes using quantum heat waves!"'
-  - '"Science is the future! And so are better, more efficient fries!"'
+  dialogueLines: []
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+--- !u!114 &1119392932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119392927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueUI: {fileID: 643936511}
   dialogueText: {fileID: 1837063967}
 --- !u!1001 &1142413380
@@ -6536,7 +6793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Name
-      value: StaticNPC (2)
+      value: Gatekeeper
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Layer
@@ -6550,6 +6807,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1851921028}
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1851921032}
   m_SourcePrefab: {fileID: 100100000, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
 --- !u!1001 &1146550742
 PrefabInstance:
@@ -6637,7 +6897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Name
-      value: StaticNPC (1)
+      value: PotatoBeing
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Layer
@@ -6651,6 +6911,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 329342343}
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 329342347}
   m_SourcePrefab: {fileID: 100100000, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
 --- !u!1 &1160800415
 GameObject:
@@ -6684,10 +6947,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1100062039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160800417
 MonoBehaviour:
@@ -6711,8 +6974,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
+  m_sharedMaterial: {fileID: -7275808209748535963, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6803,10 +7066,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cd06f5eb875b047932eff8db533ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - '"This town may be small, but it''s full of life."'
-  - '"I heard there''s a secret ingredient that makes fries extra crispy!"'
-  - '"Be careful near the castle gate. Only the worthy may pass!"'
+  dialogueLines: []
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+--- !u!114 &1185467174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185467169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueUI: {fileID: 643936511}
   dialogueText: {fileID: 1837063967}
 --- !u!1001 &1231273624
@@ -6895,7 +7169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Name
-      value: StaticNPC (4)
+      value: Shopkeeper
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       propertyPath: m_Layer
@@ -6909,6 +7183,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1322509183}
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1322509187}
   m_SourcePrefab: {fileID: 100100000, guid: 32e2fcb7939597745b8d647dba7f5542, type: 3}
 --- !u!1 &1322009433
 GameObject:
@@ -6995,10 +7272,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cd06f5eb875b047932eff8db533ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - '"Looking for some golden, crispy fries? I have the best seasoning in town!"'
-  - '"They say potatoes are just underground treasures. Care to buy some?"'
-  - "\"Quality ingredients make quality fries. That\u2019s my motto!\""
+  dialogueLines: []
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+--- !u!114 &1322509187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322509182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueUI: {fileID: 643936511}
   dialogueText: {fileID: 1837063967}
 --- !u!1 &1426548863
@@ -8261,7 +8549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"A magical well filled with fresh oil"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1 &1522819102
@@ -12299,7 +12586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The shop"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1 &1633147642
@@ -21010,6 +21296,7 @@ RectTransform:
   m_Children:
   - {fileID: 1100062039}
   - {fileID: 643936512}
+  - {fileID: 806672550}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -21034,7 +21321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The Potato Being''s home"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1001 &1771536528
@@ -21227,7 +21513,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: eaf3660986d0aaa4ab460085fe2c5c3e, type: 2}
     - target: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
       propertyPath: m_Name
-      value: MovingNPC
+      value: Farmer
       objectReference: {fileID: 0}
     - target: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
       propertyPath: m_Layer
@@ -21237,7 +21523,10 @@ PrefabInstance:
     - {fileID: 525917339853012736, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120927046}
   m_SourcePrefab: {fileID: 100100000, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
 --- !u!1 &1837063965
 GameObject:
@@ -21271,10 +21560,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 643936512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837063967
 MonoBehaviour:
@@ -21298,8 +21587,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
+  m_sharedMaterial: {fileID: -7275808209748535963, guid: 4a2a27f69f6999c42a03534f39084692, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21362,7 +21651,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1837063968
@@ -21390,7 +21679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca73d44ffae4aa4aacc816afb0ff7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signText: '"The castle gate - Only those who pass the challenge may enter!"'
   signUI: {fileID: 1100062038}
   signUIText: {fileID: 1160800417}
 --- !u!1 &1851921027 stripped
@@ -21410,10 +21698,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cd06f5eb875b047932eff8db533ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines:
-  - '"Only those who prove their worth may enter the castle."'
-  - '"A true warrior never backs down from a challenge!"'
-  - '"Defeat the trial, and you shall gain entry."'
+  dialogueLines: []
+  dialogueUI: {fileID: 0}
+  dialogueText: {fileID: 0}
+--- !u!114 &1851921032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851921027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueUI: {fileID: 643936511}
   dialogueText: {fileID: 1837063967}
 --- !u!1 &1954608750
@@ -21513,7 +21812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Name
-      value: Signpost
+      value: WellSign
       objectReference: {fileID: 0}
     - target: {fileID: 6962173201822865538, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
       propertyPath: m_Layer
@@ -21528,6 +21827,25 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1520568126}
   m_SourcePrefab: {fileID: 100100000, guid: ca03aa64b1a5f6b4fa5ca7c728f9b3dc, type: 3}
+--- !u!1 &2120927039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8947515500983213115, guid: 3ca31c229ab813f46bf3bbb14f8a61bc, type: 3}
+  m_PrefabInstance: {fileID: 1771536528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120927046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120927039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a7fb44f59ba6d439bb7a1c89dc7dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 643936511}
+  dialogueText: {fileID: 1837063967}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
