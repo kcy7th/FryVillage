@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private Vector2 lastMoveDirection = new Vector2(0, -1); // 기본값: 아래 방향
+    private Vector2 lastMoveDirection = new Vector2(0, 1);
 
     void Start()
     {
@@ -32,21 +32,22 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Idle 상태에서도 마지막 이동 방향을 유지
+            // Idle 상태에서도 마지막 이동 방향 유지
             animator.SetFloat("moveX", lastMoveDirection.x);
             animator.SetFloat("moveY", lastMoveDirection.y);
             animator.SetBool("isWalking", false);
         }
-
-        // 왼쪽 이동 시 FlipX 적용 (Idle 상태에서도 유지)
-        if (lastMoveDirection.x < 0)
-            spriteRenderer.flipX = true;
-        else if (lastMoveDirection.x > 0)
-            spriteRenderer.flipX = false;
     }
 
     void FixedUpdate()
     {
+        // Rigidbody2D 기반 이동 (Collider 충돌 반영)
         rb.velocity = movement.normalized * moveSpeed;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"플레이어가 {collision.gameObject.name}과 충돌함!");
+    }
+
 }

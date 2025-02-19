@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - NPC
+  - Obstacle
   - 
   - 
   - 
@@ -38,27 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2825655187
     locked: 0
-  - name: BackDesign
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground
     uniqueID: 1778837523
     locked: 0
-  - name: Buildings
+  - name: Character
     uniqueID: 21013775
-    locked: 0
-  - name: Collision
-    uniqueID: 2063883591
     locked: 0
   - name: ForeDesign
     uniqueID: 1417922981
-    locked: 0
-  - name: Player
-    uniqueID: 1320852573
-    locked: 0
-  - name: UI
-    uniqueID: 2788658647
     locked: 0

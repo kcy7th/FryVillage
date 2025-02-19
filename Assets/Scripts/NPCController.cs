@@ -5,9 +5,9 @@ public class NPCController : MonoBehaviour
     public enum NPCType { Monster, Farmer }
     public NPCType npcType;
 
-    public bool canMove = true; // 대화 중 이동 제한
-    public float moveSpeed = 2f; // 이동 속도
-    public float waitTime = 2f; // 이동 후 대기 시간
+    public bool canMove = true;
+    public float moveSpeed = 2f;
+    public float waitTime = 2f;
 
     public Vector2 moveAreaMin, moveAreaMax; // 몬스터 이동 범위
     public Transform[] waypoints; // 농부 이동 경로
@@ -52,7 +52,7 @@ public class NPCController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         Vector2 direction = targetPosition - (Vector2)transform.position;
 
-        // 도착했으면 새로운 목표 위치 설정
+        // 새로운 목표 위치 설정
         if (direction.magnitude < 0.1f)
             ChangePosition();
 
@@ -76,7 +76,6 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    // 블렌드 트리
     void UpdateAnimation(Vector2 direction)
     {
         animator.SetFloat("moveX", direction.normalized.x);
