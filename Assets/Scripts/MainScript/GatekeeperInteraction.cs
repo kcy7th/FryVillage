@@ -7,6 +7,7 @@ public class GatekeeperInteraction : MonoBehaviour
     private bool isPlayerNearby = false;
     private int dialogueIndex = 0;
     private bool isTalking = false;
+    private bool isDialogueFinished = false; // 대화를 끝냈는지 확인
 
     public GameObject dialogueUI;
     public TextMeshProUGUI dialogueText;
@@ -56,7 +57,25 @@ public class GatekeeperInteraction : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         isTalking = false;
-        choiceUI.SetActive(true); // 대화 종료 후 선택지 UI 활성화
+
+        // 대화를 끝냈으면 `isDialogueFinished = true`
+        if (dialogueIndex >= dialogueLines.Length)
+        {
+            isDialogueFinished = true;
+        }
+
+        // 대화를 끝냈고, Gatekeeper라면 선택지 UI 표시
+        if (gameObject.name == "Gatekeeper" && isDialogueFinished)
+        {
+            choiceUI.SetActive(true);
+        }
+    }
+
+    public void ResetDialogue()
+    {
+        isDialogueFinished = false; // 다시 대화 가능하도록 초기화
+        dialogueIndex = 0; // 대화 진행도 초기화
+        choiceUI.SetActive(false);  // 선택지 패널 닫기
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -69,10 +88,15 @@ public class GatekeeperInteraction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (gameObject != null)
+        if (other.CompareTag("Player"))
         {
             isPlayerNearby = false;
-            EndDialogue();
+
+            // 플레이어가 이동만 한 경우 `choiceUI`가 뜨지 않도록 수정
+            if (!isTalking)
+            {
+                EndDialogue();
+            }
         }
     }
 
@@ -84,6 +108,7 @@ public class GatekeeperInteraction : MonoBehaviour
 
     public void Cancel()
     {
-        choiceUI.SetActive(false); // 선택지 UI 닫기
+        choiceUI.SetActive(false);  // 선택지 UI 닫기
+        ResetDialogue();  // 대화 상태 초기화
     }
 }
