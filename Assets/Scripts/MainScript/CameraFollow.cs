@@ -1,21 +1,44 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player; // 플레이어의 Transform
-    public float smoothSpeed = 5f; // 카메라 이동 속도
-    public Vector3 offset = new Vector3(0f, 0f, -10f); // 카메라 위치 오프셋
+    private Transform player; // 초기값 제거
+    public float smoothSpeed = 5f;
+    public Vector3 offset = new Vector3(0.02f, -6f, -10f);
 
-    public Vector2 minLimit; // 최소 좌표
-    public Vector2 maxLimit; // 최대 좌표
+    public Vector2 minLimit;
+    public Vector2 maxLimit;
+
+    void Start()
+    {
+        FindPlayer(); // 시작할 때 플레이어 찾기
+
+        // 씬이 로드될 때마다 플레이어 다시 찾기
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindPlayer(); // 씬이 바뀌면 플레이어 다시 찾기
+    }
+
+    void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player")?.transform; // 태그로 찾기
+    }
 
     void LateUpdate()
     {
-        if (player == null) return; // 플레이어가 없으면 실행하지 않음
+        if (player == null) return;
 
         Vector3 targetPosition = player.position + offset;
 
-        // 카메라 이동 제한 적용
         targetPosition.x = Mathf.Clamp(targetPosition.x, minLimit.x, maxLimit.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minLimit.y, maxLimit.y);
 

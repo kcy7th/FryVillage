@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,11 +10,30 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 lastMoveDirection = new Vector2(0, 1);
 
+    private Vector3 savedPlayerPosition; // 플레이어 위치 저장 변수
+    private bool hasSavedPosition = false; // 위치 저장 여부 체크
+
+    private void Awake()
+    {
+        if (FindObjectsOfType<PlayerController>().Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+    }
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
@@ -41,7 +61,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Rigidbody2D 기반 이동 (Collider 충돌 반영)
         rb.velocity = movement.normalized * moveSpeed;
     }
 
@@ -50,4 +69,38 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"플레이어가 {collision.gameObject.name}과 충돌함!");
     }
 
+    public void SavePlayerPosition()
+    {
+        savedPlayerPosition = transform.position;
+        hasSavedPosition = true;
+    }
+
+    // 메인 씬으로 돌아올 때 위치 복원
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log($"씬 로드됨: {scene.name}");
+
+        if (scene.name == "MainScene" && hasSavedPosition)
+        {
+            transform.position = savedPlayerPosition;
+        }
+    }
+
+    // 미니 게임으로 이동할 때 호출
+    public void GoToMiniGame()
+    {
+        SavePlayerPosition(); // 위치 저장
+        SceneManager.LoadScene("MiniGameScene");
+    }
+
+    // 미니 게임 종료 후 메인 씬으로 이동
+    public void ReturnToMainScene()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }
