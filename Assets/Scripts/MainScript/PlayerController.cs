@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name == "StartScene")
+        {
+            return; // StartScene에서는 실행하지 않음
+        }
+
         if (FindObjectsOfType<PlayerController>().Length > 1)
         {
             Destroy(gameObject);
@@ -78,6 +83,11 @@ public class PlayerController : MonoBehaviour
     // 메인 씬으로 돌아올 때 위치 복원
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name == "StartScene")
+        {
+            return; // StartScene에서는 실행하지 않음
+        }
+
         Debug.Log($"씬 로드됨: {scene.name}");
 
         if (scene.name == "MainScene" && hasSavedPosition)

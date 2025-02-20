@@ -14,7 +14,7 @@ public class BGMManager : MonoBehaviour
     // ¾Àº° º¼·ý ¼³Á¤
     [Range(0f, 1f)] public float mainSceneVolume = 1f;
     [Range(0f, 1f)] public float miniGameVolume = 0.5f;
-    [Range(0f, 1f)] public float startVolume = 1f;
+    [Range(0f, 1f)] public float startVolume = 0.5f;
 
     void Awake()
     {
@@ -23,6 +23,8 @@ public class BGMManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             audioSource = GetComponent<AudioSource>();
+
+            PlayBGM(SceneManager.GetActiveScene().name);
         }
         else
         {
