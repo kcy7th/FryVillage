@@ -39,18 +39,30 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2825655187
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 1778837523
+  - name: Background
+    uniqueID: 2825655187
     locked: 0
-  - name: Character
+  - name: BackDesign
     uniqueID: 21013775
     locked: 0
+  - name: Building
+    uniqueID: 3909885833
+    locked: 0
+  - name: Signpost
+    uniqueID: 1919360831
+    locked: 0
+  - name: NPC
+    uniqueID: 793543927
+    locked: 0
+  - name: Player
+    uniqueID: 1487561599
+    locked: 0
+  - name: Roof
+    uniqueID: 7489007
+    locked: 0
   - name: ForeDesign
-    uniqueID: 1417922981
+    uniqueID: 2094085447
     locked: 0

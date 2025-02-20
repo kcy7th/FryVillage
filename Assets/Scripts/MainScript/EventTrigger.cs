@@ -11,7 +11,7 @@ public class EventTrigger : MonoBehaviour
         {
             hasTriggered = true;
             eventPanel.SetActive(true); 
-            Invoke(nameof(HideEvent), 3f); 
+            Invoke(nameof(HideEvent), 2f); 
         }
     }
 

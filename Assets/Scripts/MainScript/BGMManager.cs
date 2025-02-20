@@ -7,12 +7,14 @@ public class BGMManager : MonoBehaviour
 
     public AudioClip mainSceneBGM;  // ∏ﬁ¿Œ æ¿ BGM
     public AudioClip miniGameBGM;   // πÃ¥œ∞‘¿” æ¿ BGM
+    public AudioClip startBGM;
 
     private AudioSource audioSource;
 
     // æ¿∫∞ ∫º∑˝ º≥¡§
     [Range(0f, 1f)] public float mainSceneVolume = 1f;
     [Range(0f, 1f)] public float miniGameVolume = 0.5f;
+    [Range(0f, 1f)] public float startVolume = 1f;
 
     void Awake()
     {
@@ -50,6 +52,11 @@ public class BGMManager : MonoBehaviour
         {
             clip = miniGameBGM;
             volume = miniGameVolume;
+        }
+        else if (sceneName == "StartScene")
+        {
+            clip = startBGM;
+            volume = startVolume;
         }
 
         if (clip != null && audioSource.clip != clip)
