@@ -8,24 +8,27 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private Vector2 lastMoveDirection = new Vector2(0, 1);
+    private Vector2 lastMoveDirection = new Vector2(0, 1);  // 기본 방향 값
 
-    private Vector3 savedPlayerPosition; // 플레이어 위치 저장 변수
-    private bool hasSavedPosition = false; // 위치 저장 여부 체크
+    private Vector3 savedPlayerPosition; // 저장된 플레이어 위치
+    private bool hasSavedPosition = false; // 위치 저장 여부
 
     private void Awake()
     {
+        // StartScene에서는 실행하지 않음
         if (SceneManager.GetActiveScene().name == "StartScene")
         {
-            return; // StartScene에서는 실행하지 않음
+            return;
         }
 
+        // 중복된 PlayerController가 존재할 경우 현재 오브젝트를 삭제
         if (FindObjectsOfType<PlayerController>().Length > 1)
         {
             Destroy(gameObject);
         }
         else
         {
+            // 씬이 변경되어도 파괴되지 않도록 설정
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // 씬 로드 이벤트
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -47,10 +51,10 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // 이동 중이면 방향 즉시 반영 & 마지막 이동 방향 저장
+        // 이동 중이면 방향 즉시 반영
         if (movement.sqrMagnitude > 0.01f)
         {
-            lastMoveDirection = movement.normalized; // 마지막 이동 방향 저장
+            lastMoveDirection = movement.normalized;  // 마지막 이동 방향 저장
             animator.SetFloat("moveX", movement.x);
             animator.SetFloat("moveY", movement.y);
             animator.SetBool("isWalking", true);
@@ -66,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 이동 방향에 따라 속도를 설정
         rb.velocity = movement.normalized * moveSpeed;
     }
 
@@ -74,6 +79,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"플레이어가 {collision.gameObject.name}과 충돌함!");
     }
 
+    // 플레이어 위치 저장
     public void SavePlayerPosition()
     {
         savedPlayerPosition = transform.position;
@@ -109,6 +115,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    // 오브젝트가 삭제될 때 이벤트 등록 해제
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;

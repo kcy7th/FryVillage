@@ -7,7 +7,7 @@ public class GatekeeperInteraction : MonoBehaviour
     private bool isPlayerNearby = false;
     private int dialogueIndex = 0;
     private bool isTalking = false;
-    private bool isDialogueFinished = false; // 대화를 끝냈는지 확인
+    private bool isDialogueFinished = false; // 대화가 끝났는지 여부
 
     public GameObject dialogueUI;
     public TextMeshProUGUI dialogueText;
@@ -21,10 +21,12 @@ public class GatekeeperInteraction : MonoBehaviour
 
     void Update()
     {
+        // 플레이어가 근처에 있고 E 키를 누르면 대화 시작
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isTalking)
         {
             StartDialogue();
         }
+        // 대화 중이고 Space 키를 누르면 다음 대사 출력
         else if (isTalking && Input.GetKeyDown(KeyCode.Space))
         {
             NextDialogue();
@@ -58,13 +60,12 @@ public class GatekeeperInteraction : MonoBehaviour
         if (dialogueUI != null) dialogueUI.SetActive(false);
         isTalking = false;
 
-        // 대화를 끝냈으면 `isDialogueFinished = true`
+        // 대화를 완료한 경우 선택지 UI 표시
         if (dialogueIndex >= dialogueLines.Length)
         {
             isDialogueFinished = true;
         }
 
-        // `choiceUI`가 존재할 때만 활성화
         if (gameObject.name == "Gatekeeper" && isDialogueFinished && choiceUI != null)
         {
             choiceUI.SetActive(true);
@@ -92,7 +93,7 @@ public class GatekeeperInteraction : MonoBehaviour
         {
             isPlayerNearby = false;
 
-            // 플레이어가 이동만 한 경우 `choiceUI`가 뜨지 않도록 수정
+            // 플레이어가 단순 이동한 경우 선택지 UI가 뜨지 않도록 처리
             if (!isTalking && choiceUI != null)
             {
                 EndDialogue();

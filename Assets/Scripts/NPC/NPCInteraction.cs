@@ -9,7 +9,7 @@ public class NPCInteraction : MonoBehaviour
     private bool isTalking = false; // 현재 대화 중인지 확인
 
     public GameObject dialogueUI;
-    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI dialogueText;  // 대화 내용 표시할 TMP UI
     private NPCController npcController; // NPC 이동 제어 (움직이는 NPC만 해당)
 
     private List<string> dialogueLines = new List<string>();
@@ -88,11 +88,13 @@ public class NPCInteraction : MonoBehaviour
 
     void Update()
     {
+        // 플레이어가 근처에 있고 E 키를 눌렀을 때 대화 시작
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isTalking)
         {
-            StartDialogue(); // 대화 시작 시 항상 처음부터 진행
+            StartDialogue();
         }
 
+        // 대화 중이고 Space 키를 누르면 다음 대사 출력
         if (isTalking && Input.GetKeyDown(KeyCode.Space))
         {
             NextDialogue();
@@ -101,6 +103,7 @@ public class NPCInteraction : MonoBehaviour
 
     void StartDialogue()
     {
+        // 대화 UI 또는 대사 리스트가 없으면 실행하지 않음
         if (dialogueUI == null || dialogueText == null || dialogueLines.Count == 0)
         {
             return;
@@ -119,15 +122,16 @@ public class NPCInteraction : MonoBehaviour
 
     void NextDialogue()
     {
-        currentLineIndex++;
+        currentLineIndex++;  // 다음 대사로 이동
 
+        // 남은 대사가 있다면 출력
         if (currentLineIndex < dialogueLines.Count)
         {
             dialogueText.text = dialogueLines[currentLineIndex];
         }
         else
         {
-            EndDialogue();
+            EndDialogue();  // 모든 대사를 출력한 경우 대화 종료
         }
     }
 
@@ -144,6 +148,7 @@ public class NPCInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // 플레이어가 충돌 범위에 들어오면 대화 가능 상태로 변경
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = true;
@@ -152,6 +157,7 @@ public class NPCInteraction : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        // 플레이어가 범위를 벗어나면 대화 종료
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = false;

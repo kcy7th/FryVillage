@@ -7,7 +7,7 @@ public class BGMManager : MonoBehaviour
 
     public AudioClip mainSceneBGM;  // 메인 씬 BGM
     public AudioClip miniGameBGM;   // 미니게임 씬 BGM
-    public AudioClip startBGM;
+    public AudioClip startBGM;  // 시작 씬 BGM
 
     private AudioSource audioSource;
 
@@ -18,10 +18,11 @@ public class BGMManager : MonoBehaviour
 
     void Awake()
     {
+        // 중복된 BGMManager 존재 시 삭제
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  // 씬 변경 시에도 유지
             audioSource = GetComponent<AudioSource>();
 
             PlayBGM(SceneManager.GetActiveScene().name);
@@ -32,9 +33,11 @@ public class BGMManager : MonoBehaviour
             return;
         }
 
+        // 씬이 로드될 때마다 새로운 BGM을 재생하도록 이벤트 등록
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    // 씬 바뀔 때 자동 호출
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         PlayBGM(scene.name);
@@ -60,7 +63,8 @@ public class BGMManager : MonoBehaviour
             clip = startBGM;
             volume = startVolume;
         }
-
+        
+        // 새로운 BGM이 기존 BGM과 다를 경우 변경
         if (clip != null && audioSource.clip != clip)
         {
             audioSource.clip = clip;

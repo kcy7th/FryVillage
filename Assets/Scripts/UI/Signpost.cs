@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Signpost : MonoBehaviour
 {
-    private bool isPlayerNearby = false;
+    private bool isPlayerNearby = false;  // 표지판 근처에 있는지 여부
 
     public GameObject signUI; // UI 패널
     public TextMeshProUGUI signUIText; // TMP 텍스트
@@ -48,6 +48,7 @@ public class Signpost : MonoBehaviour
 
     void Update()
     {
+        // 플레이어가 근처에 있음 + E 누를 시
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             ShowSign();
@@ -58,7 +59,7 @@ public class Signpost : MonoBehaviour
     {
         if (signUI == null || signUIText == null)
         {
-            return;
+            return;  // UI 없을 시 실행 X
         }
 
         signUI.SetActive(true);
